@@ -11,20 +11,24 @@ HarmoniX is a prototype mobile application that demonstrates a modern, gradient-
 6. A bottom navigation bar that allows seamless switching between Home, Favourites, and Account sections.
 Features
   1. Login & Sign-Up:
+     
     User authentication screens featuring:
       i. Gradient background (black to deep purple)
       ii. Email, password, and username input fields
       iii. "Remember for 30 days" functionality and forgot password link
 
   2. Media Playback:
+     
     i. Music mode with a mini audio player and playlist management.
     ii. Video mode with a mini video player and full-screen video playback.
 
   3. Navigation:
+     
     i. A bottom navigation bar with Home, Favourites, and Account options.
     ii. Seamless toggling between music and video modes via a custom switch in the AppBar.
 
   4. Animations & Custom Widgets:
+     
     i. Lottie animations in the AppBar that change based on the time of day.
     ii. Animated text for song titles and artist names.
     iii. Custom wavy slider for tracking music playback progress.
