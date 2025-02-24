@@ -1,4 +1,5 @@
 **HarmoniX Music & Video Player**
+
 A sleek, gradient-themed music and video streaming app prototype built with Flutter. The app features custom-designed login and sign-up screens, media playback with mini-players, and a dynamic bottom navigation bar that toggles between music and video modes.
 
 
