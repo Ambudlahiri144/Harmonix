@@ -20,7 +20,7 @@ Future<void> requestLocationPermission() async {
 }
 
 class WeatherService {
-  final String apiKey = 'dc07beaa80650a18e95e3def2e9dfa22';
+  final String apiKey = 'OPENAI';
 
   Future<String> getWeatherCondition(double lat, double lon) async {
     final url =
@@ -35,6 +35,7 @@ class WeatherService {
     }
   }
 }
+
 class LocationService {
   Future<Position> getCurrentLocation() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
@@ -58,6 +59,7 @@ class LocationService {
     return await Geolocator.getCurrentPosition();
   }
 }
+
 String getTimeOfDay() {
   final hour = DateTime.now().hour;
 
@@ -73,9 +75,11 @@ String getTimeOfDay() {
 }
 
 class AIImageService {
-  final String apiKey = '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';
+  final String apiKey =
+      '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';
 
-  Future<String> generateImage(String weatherCondition,String timeOfDay) async {
+  Future<String> generateImage(
+      String weatherCondition, String timeOfDay) async {
     final url = 'https://api.openai.com/v1/images/generations';
     final headers = {
       'Content-Type': 'application/json',
@@ -83,12 +87,14 @@ class AIImageService {
     };
 
     final body = jsonEncode({
-      "prompt": "A gradient photo depicting $weatherCondition weather during $timeOfDay having no light colours, high resolution, photorealistic",
+      "prompt":
+          "A gradient photo depicting $weatherCondition weather during $timeOfDay having no light colours, high resolution, photorealistic",
       "n": 1,
       "size": "1024x1024"
     });
 
-    final response = await http.post(Uri.parse(url), headers: headers, body: body);
+    final response =
+        await http.post(Uri.parse(url), headers: headers, body: body);
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
@@ -98,4 +104,3 @@ class AIImageService {
     }
   }
 }
-
